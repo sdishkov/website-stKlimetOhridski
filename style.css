@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: url('imgs/church-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.hamburger {
+  font-size: 1.8em;
+  cursor: pointer;
+  display: none;
+}
+
+/* Navigation */
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+/* Language Switch */
+.lang-switch {
+  margin-top: 10px;
+}
+
+.lang-switch button {
+  margin: 3px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 5px;
+}
+
+/* Main content */
+.content {
+  max-width: 600px;
+  margin: 50px auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Social links */
+.social-links {
+  margin-top: 30px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}

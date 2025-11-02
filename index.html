@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orthodox Church</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Orthodox Church</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+      <a href="#home" data-text="home">Home</a>
+      <a href="#history" data-text="history">History</a>
+      <a href="#events" data-text="events">Important Events</a>
+      <a href="#about" data-text="about">About Us</a>
+    </nav>
+    <div class="lang-switch">
+      <button onclick="setLanguage('en')">🇬🇧 English</button>
+      <button onclick="setLanguage('fr')">🇫🇷 Français</button>
+      <button onclick="setLanguage('bg')">🇧🇬 Български</button>
+    </div>
+  </header>
+
+  <div class="content" id="content">
+    <h1>Welcome to our Orthodox Church</h1>
+    <p>We are blessed to have you visit our community. May peace and faith be with you.</p>
+  </div>
+
+  <div class="social-links">
+    <a href="https://facebook.com" target="_blank">🌐 Facebook</a>
+    <a href="https://instagram.com" target="_blank">📸 Instagram</a>
+    <a href="https://youtube.com" target="_blank">🎥 YouTube</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    const translations = {
+      en: {
+        home: "Home",
+        history: "History",
+        events: "Important Events",
+        about: "About Us",
+        contentTitle: "Welcome to our Orthodox Church",
+        contentText: "We are blessed to have you visit our community. May peace and faith be with you."
+      },
+      fr: {
+        home: "Accueil",
+        history: "Histoire",
+        events: "Événements Importants",
+        about: "À propos de nous",
+        contentTitle: "Bienvenue dans notre église orthodoxe",
+        contentText: "Nous sommes bénis de vous accueillir dans notre communauté. Que la paix et la foi soient avec vous."
+      },
+      bg: {
+        home: "Начало",
+        history: "История",
+        events: "Важни събития",
+        about: "За нас",
+        contentTitle: "Добре дошли в нашата православна църква",
+        contentText: "Благословени сме, че сте с нас. Нека мирът и вярата бъдат с вас."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.querySelectorAll("nav a").forEach(a => {
+        const key = a.getAttribute("data-text");
+        a.textContent = translations[lang][key];
+      });
+      document.getElementById("content").innerHTML = `
+        <h1>${translations[lang].contentTitle}</h1>
+        <p>${translations[lang].contentText}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
